@@ -1,0 +1,30 @@
+{
+  "name": "playwright-framework",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --project=ui",
+    "test:api": "playwright test --project=api",
+    "test:e2e": "playwright test --project=e2e",
+    "test:smoke": "playwright test --grep @smoke",
+    "report": "allure generate reports/allure-results --clean -o reports/allure-report && allure open reports/allure-report",
+    "typecheck": "tsc --noEmit",
+    "agent": "tsx src/agent/automationAgent.ts",
+    "agent:example": "tsx src/agent/automationAgent.ts \"Review the current automation framework and propose test improvements\""
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.0.0",
+    "@github/copilot-sdk": "^1.0.18"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.0.0",
+    "allure-commandline": "^2.30.0",
+    "allure-playwright": "^3.0.0",
+    "dotenv": "^16.4.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "zod": "^4.6.7"
+  }
+}
